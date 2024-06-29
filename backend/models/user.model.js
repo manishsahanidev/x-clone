@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      minlength: 6,
+      minLength: 6,
     },
     email: {
       type: String,
@@ -47,13 +47,22 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
     link: {
       type: String,
       default: "",
     },
+    likedPosts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post",
+        default: [],
+      },
+    ],
   },
   { timestamps: true }
 );
 
 const User = mongoose.model("User", userSchema);
+
 export default User;
