@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import RightPanelSkeleton from "../skeletons/RightPanelSkeleton";
 import { useQuery } from "@tanstack/react-query";
+
+import RightPanelSkeleton from "../skeletons/RightPanelSkeleton";
 
 const RightPanel = () => {
   const { data: suggestedUsers, isLoading } = useQuery({
